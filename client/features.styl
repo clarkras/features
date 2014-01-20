@@ -1,0 +1,66 @@
+body
+  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-weight 200
+  margin 50px 0 0 50px
+  padding 0
+  -webkit-user-select none
+  -khtml-user-select none
+  -moz-user-select none
+  -o-user-select none
+  user-select none
+
+.features-pane
+  background #ddd
+
+.heading-row
+  h2
+    float left
+
+.new-project-container
+  line-height 40px
+  float right
+
+.project-name
+  font-weight bold
+  float left
+
+.item-row
+  height 20px
+  margin 2px 0
+  clear both
+  .button-container
+    float right
+  .item-icon
+    display inline-block
+    width 20px
+    height 20px
+    padding-right 4px
+  &:hover
+    background lightblue
+    .icon
+      display block
+    .destroy
+      background url('/destroy.png') no-repeat 0 0
+  .icon
+    display none
+    &:hover
+      background-position 0 -96px
+  .destroy
+    &:hover
+      background-position 0 -20px
+
+.feature-item
+  cursor pointer
+  list-style none
+  margin-left 0
+  padding-left 10px
+  padding-top 4px
+  &.selected
+    background greenyellow
+  .active-icon
+    width 25px
+    margin-right 10px
+    float left
+  .feature-name
+    float left
+

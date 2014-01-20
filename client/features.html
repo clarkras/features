@@ -16,7 +16,7 @@
 
 <template name="new_project">
   <div class="new-project-container">
-    {{#if creating_new_project }}
+    {{#if creating_project }}
       <input type="text" id="new-project" placeholder="New project" />
     {{else}}
       <a href="#" class="new-project-link">New project</a>
@@ -26,7 +26,7 @@
 
 <template name="new_feature_input">
   <div class="new-feature-container">
-    {{#if creating_new_feature }}
+    {{#if creating_feature }}
       <input type="text" class="new-feature-input" placeholder="New feature" />
     {{/if}}
   </div>
@@ -35,9 +35,11 @@
 <template name="project_item">
   <div class="item-row project-item">
     <div class="project-name">{{name}}</div>
-    <div class="destroy"></div>
-    <div class="add">
-      <i class="icon inactive icon-plus"></i>
+    <div class="button-container">
+      <div class="item-icon add">
+        <i class="icon inactive icon-plus"></i>
+      </div>
+      <div class="item-icon destroy"></div>
     </div>
   </div>
   {{> new_feature_input}}
@@ -47,7 +49,9 @@
   <li class="item-row feature-item {{selected_class}}">
     <div class="active-icon label {{active_class}}">{{active_text}}</div>
     <div class="feature-name">{{name}}</div>
-    <div class="destroy"></div>
+    <div class="button-container">
+      <div class="item-icon destroy"></div>
+    </div>
   </li>
 </template>
 

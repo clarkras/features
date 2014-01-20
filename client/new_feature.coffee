@@ -1,3 +1,8 @@
+
+
+# This file is no longer being used.
+
+
 $dialog = null
 
 Template.new_feature.rendered = ->
