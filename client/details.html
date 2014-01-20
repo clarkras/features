@@ -1,0 +1,9 @@
+<template name="details">
+  {{#if any_feature_selected}}
+    {{#with feature}}
+      <div>{{name}}</div>
+    {{/with}}
+  {{else}}
+      <div>No feature selected</div>
+  {{/if}}
+</template>
