@@ -25,42 +25,42 @@ body
   float left
 
 .item-row
-  height 20px
+  height 24px
   margin 2px 0
-  clear both
+  cursor pointer
+  &.project-item
+    margin-top 12px
+    padding-left 8px
+  &.feature-item
+    list-style none
+    margin-left 0
+    padding-left 20px
+    padding-top 4px
+    &.selected
+      background lightblue
+    .active-icon
+      width 25px
+      margin-right 10px
+      float left
+    .feature-name
+      float left
   .button-container
     float right
+    display none
   .item-icon
     display inline-block
     width 20px
-    height 20px
+    height 19px
     padding-right 4px
   &:hover
-    background lightblue
-    .icon
+    background darkgray
+    .button-container
       display block
     .destroy
       background url('/destroy.png') no-repeat 0 0
-  .icon
-    display none
-    &:hover
-      background-position 0 -96px
-  .destroy
-    &:hover
+  .icon:hover
+    background-position 0 -96px
+  .destroy:hover
       background-position 0 -20px
 
-.feature-item
-  cursor pointer
-  list-style none
-  margin-left 0
-  padding-left 10px
-  padding-top 4px
-  &.selected
-    background greenyellow
-  .active-icon
-    width 25px
-    margin-right 10px
-    float left
-  .feature-name
-    float left
 
