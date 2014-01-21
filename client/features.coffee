@@ -92,6 +92,7 @@ Template.project_item.events okCancelEvents('.edit-project-input',
 
 Template.project_item.rendered = ->
   activate_input @find('input')
+  $(@findAll('.item-icon')).tooltip()
 
 ########## feature_item ##########
 
@@ -127,3 +128,4 @@ Template.feature_item.helpers
 Template.feature_item.rendered = ->
   # does nothing if the input field is not in the dom
   activate_input @find('input')
+  $(@findAll('.item-icon')).tooltip()
