@@ -1,0 +1,14 @@
+<template name="feature_item">
+    <li class="item-row feature-item {{selected_class}}">
+        {{#if editing_feature}}
+            <input type="text" class="edit-feature-input" value="{{name}}"/>
+        {{else}}
+            <div class="active-icon label {{active_class}}">{{active_text}}</div>
+            <div class="feature-name">{{name}}</div>
+            <div class="button-container">
+                <i class="item-icon destroy ion-close-circled" title="Delete feature"></i>
+            </div>
+        {{/if}}
+    </li>
+</template>
+

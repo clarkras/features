@@ -1,0 +1,18 @@
+<template name="project_item">
+    <div class="item-row project-item">
+        {{#if editing_project}}
+            <input type="text" class="edit-project-input" value="{{name}}"/>
+        {{else}}
+            <div class="project-name">{{name}}</div>
+            <div class="button-container">
+                <i class="item-icon add ion-plus-circled" title="Add feature"></i>
+                <i class="item-icon destroy ion-close-circled" title="Delete project"></i>
+            </div>
+        {{/if}}
+    </div>
+    <div class="new-feature-container">
+        {{#if creating_feature }}
+            <input type="text" class="new-feature-input" placeholder="New feature" />
+        {{/if}}
+    </div>
+</template>

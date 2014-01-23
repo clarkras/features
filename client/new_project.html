@@ -1,0 +1,9 @@
+<template name="new_project">
+    <div class="new-project-container">
+        {{#if creating_project }}
+            <input type="text" id="new-project" placeholder="New project" />
+        {{else}}
+            <a href="#" class="new-project-link">New project</a>
+        {{/if}}
+    </div>
+</template>

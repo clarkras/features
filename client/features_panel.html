@@ -1,0 +1,15 @@
+<template name="features_panel">
+    <div id="features-panel">
+        {{#each projects}}
+            {{> project_item}}
+            <div class="features">
+                <ul>
+                    {{#each features _id}}
+                        {{> feature_item}}
+                    {{/each}}
+                </ul>
+            </div>
+        {{/each}}
+    </div>
+</template>
+
