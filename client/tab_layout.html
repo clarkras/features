@@ -1,0 +1,17 @@
+<template name="tab_layout">
+    <div id="nav-tabs" class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#features-panel" data-toggle="tab">Features</a></li>
+            <li><a href="#groups-panel" data-toggle="tab">Groups</a></li>
+        </ul>
+        <div class="tab-content row-fluid">
+            <div id="features-panel" class="tab-pane active">
+                {{> features_panel}}
+            </div>
+            <div id="groups-panel" class="tab-pane">
+                <h2>Groups</h2>
+                TBD
+            </div>
+        </div>
+    </div>
+</template>
