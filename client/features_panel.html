@@ -1,15 +1,30 @@
 <template name="features_panel">
-    <div id="features-panel">
-        {{#each projects}}
-            {{> project_item}}
-            <div class="features">
-                <ul>
-                    {{#each features _id}}
-                        {{> feature_item}}
-                    {{/each}}
-                </ul>
+    <div class="row-fluid heading-row">
+        <div class="span5">
+            <h2>Features</h2>
+            {{> new_project}}
+        </div>
+        <div class="span7">
+            <h2>Details</h2>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span5 features-pane">
+            <div id="features-panel">
+                {{#each projects}}
+                    {{> project_item}}
+                    <div class="features">
+                        <ul>
+                            {{#each features _id}}
+                                {{> feature_item}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                {{/each}}
             </div>
-        {{/each}}
+        </div>
+        <div class="span7">
+            {{> details}}
+        </div>
     </div>
 </template>
-

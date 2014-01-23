@@ -1,5 +1,6 @@
 Template.details.any_feature_selected = ->
-  not Session.equals("selected_feature", null)
+  console.log "selected_feature", Session.get("selected_feature")
+  Session.get("selected_feature")
 
 Template.details.feature = ->
   Features.findOne Session.get('selected_feature')

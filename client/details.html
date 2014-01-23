@@ -2,6 +2,13 @@
     {{#if any_feature_selected}}
         {{#with feature}}
             <div>{{name}}</div>
+            <div class="span2 label-column">
+                <div>Scope</div>
+            </div>
+            <div class="span5 content-column">
+                <input type="radio" name="scope" value="all" checked> All users
+                <input type="radio" name="scope" value="all"> Custom<br/>
+            </div>
         {{/with}}
     {{else}}
         <div>No feature selected</div>

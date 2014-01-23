@@ -9,6 +9,7 @@ Template.feature_item.events
     Features.update @_id, $set: active: not @active
   'click .destroy': ->
     Features.remove @_id
+    Session.set 'selected_feature', null
   'dblclick': ->
     Session.set 'editing_feature', @_id
 
