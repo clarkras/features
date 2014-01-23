@@ -4,11 +4,13 @@ okCancelEvents = @Lib.okCancelEvents
 
 Template.project_item.helpers
   editing_project: ->
-    Session.get('editing_project') is @_id
+    Session.equals('editing_project', @_id)
   creating_feature: ->
-    Session.get('creating_feature') is @_id
+    Session.equals('creating_feature', @_id)
 
 Template.project_item.events
+  'click .tree-icon': (evt, tmpl) ->
+    on_click_tree_icon tmpl
   'click .add': (evt, tmpl) ->
     Session.set 'creating_feature', tmpl.data._id
   'click .destroy': ->
@@ -39,4 +41,10 @@ Template.project_item.events okCancelEvents('.new-feature-input',
   cancel: ->
     Session.set 'creating_feature', false
 )
+
+on_click_tree_icon = (tmpl) ->
+  console.log "on_click_tree_icon"
+  if Features.find(project_id: tmpl.data._id).count() > 0
+    $("[data-js-project_id=#{tmpl.data._id}]").slideToggle(100)
+    $(tmpl.findAll('.tree-icon')).toggle()
 

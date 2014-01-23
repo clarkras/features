@@ -30,7 +30,7 @@ Template.feature_item.helpers
   active_text: ->
     if @active then "On" else "Off"
   editing_feature: ->
-    Session.get('editing_feature') is @_id
+    Session.equals('editing_feature', @_id)
 
 Template.feature_item.rendered = ->
   # does nothing if the input field is not in the dom

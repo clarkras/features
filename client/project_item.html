@@ -3,6 +3,8 @@
         {{#if editing_project}}
             <input type="text" class="edit-project-input" value="{{name}}"/>
         {{else}}
+            <i class="tree-icon expanded ion-arrow-right-b"></i>
+            <i class="tree-icon collapsed ion-arrow-down-b"></i>
             <div class="project-name">{{name}}</div>
             <div class="button-container">
                 <i class="item-icon add ion-plus-circled" title="Add feature"></i>

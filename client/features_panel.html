@@ -13,7 +13,7 @@
             <div id="features-panel">
                 {{#each projects}}
                     {{> project_item}}
-                    <div class="features">
+                    <div class="features-container" data-js-project_id="{{_id}}">
                         <ul>
                             {{#each features _id}}
                                 {{> feature_item}}
