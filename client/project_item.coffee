@@ -43,7 +43,6 @@ Template.project_item.events okCancelEvents('.new-feature-input',
 )
 
 on_click_tree_icon = (tmpl) ->
-  console.log "on_click_tree_icon"
   if Features.find(project_id: tmpl.data._id).count() > 0
     $("[data-js-project_id=#{tmpl.data._id}]").slideToggle(100)
     $(tmpl.findAll('.tree-icon')).toggle()

@@ -14,7 +14,6 @@ body
     float left
 
 .new-project-container
-  line-height 40px
   float right
 
 .ui-tooltip-content
@@ -23,8 +22,38 @@ body
 .nav
   margin-bottom 10px
 
+.details-pane
+  textarea, input
+    margin-bottom 0
+  input[type=text], textarea
+    width 340px
+  input[type=radio]
+    margin-top 0
+  input[type=text]
+    margin-right 10px
+  .row
+    margin-left 10px
+    margin-bottom 10px
+  .active-icon
+    cursor pointer
+  .row-label
+    width 100px
+    display inline-block
+    vertical-align top
+  .groups-container
+    display: inline-block
+  .groups-box
+    display inline-block
+    border 1px solid #ddd
+    width 340px
+    padding 5px 10px
+    margin 5px 0
+    .group-name
+      display inline-block
+      margin-top 4px
+
 .features-pane
-  background #ddd
+  background #eee
   .features-container
     display none // initially collapsed
   .item-row

@@ -1,6 +1,7 @@
 # if the database is empty on server start, create some sample data.
 Meteor.startup ->
   Projects = share.Projects
+  Groups = share.Groups
   Features = share.Features
   if Projects.find().count() is 0
     data = [
@@ -33,5 +34,9 @@ Meteor.startup ->
           timestamp: timestamp
           active: info[1]
         timestamp += 1 # ensure unique timestamp.
+
+  if Groups.find().count() is 0
+    Groups.insert(name: name) for name in ['Development', 'QA']
+
   null
 

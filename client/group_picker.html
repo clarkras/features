@@ -1,0 +1,17 @@
+<template name="group_picker">
+    <label class="checkbox">
+        <input type="checkbox" {{use_groups_checked}}>
+        Active for Groups
+    </label>
+    </div>
+    <div class="groups-box {{groups_box_class}}">
+        {{#each groups}}
+            <div class="group-container">
+                <label class="checkbox">
+                    <input type="checkbox" {{group_checked}}>
+                    {{name}}
+                </label>
+            </div>
+        {{/each}}
+    </div>
+</template>

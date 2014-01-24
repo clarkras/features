@@ -1,14 +1,32 @@
 <template name="details">
     {{#if any_feature_selected}}
         {{#with feature}}
-            <div>{{name}}</div>
-            <div class="span2 label-column">
-                <div>Scope</div>
-            </div>
-            <div class="span5 content-column">
-                <input type="radio" name="scope" value="all" checked> All users
-                <input type="radio" name="scope" value="all"> Custom<br/>
-            </div>
+            <form>
+                <div class="row">
+                    <div class="row-label">Feature</div>
+                    <input type="text" value="{{name}}">
+                </div>
+                <div class="row">
+                    <div class="row-label">Description</div>
+                    <textarea></textarea>
+                </div>
+                <div class="row">
+                    <div class="row-label">Status</div>
+                    <div class="active-icon label {{active_class}}">{{active_text}}</div>
+                </div>
+                <div class="row">
+                    <div class="row-label">Scope</div>
+                    <input type="radio" name="scope" value="all" checked> All users &nbsp; &nbsp;
+                    <input type="radio" name="scope" value="all"> Custom
+                </div>
+                <div class="row">
+                    <div class="row-label">Groups</div>
+                    <div class="groups-container">
+                        {{> group_picker}}
+                    </div>
+
+                </div>
+            </form>
         {{/with}}
     {{else}}
         <div>No feature selected</div>

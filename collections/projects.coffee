@@ -1,6 +1,6 @@
-# Projects -- {name: String}
-Projects = new Meteor.Collection("projects")
+# Groups -- {name: String}
+Groups = new Meteor.Collection("groups")
 if Meteor.isClient
-  @Projects = Projects
+  @Groups = Groups
 else
-  share.Projects = Projects
+  share.Groups = Groups
