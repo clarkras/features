@@ -10,12 +10,3 @@ Session.set 'editing_project', null
 #   editing_project     feature_id
 
 
-########## features ##########
-
-Template.features_panel.helpers
-  projects: ->
-    Projects.find({}, sort: name: 1)
-  features: (id) ->
-    Features.find({project_id: id}, sort: name: 1)
-
-

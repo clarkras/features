@@ -14,7 +14,7 @@ Meteor.startup ->
         ]
       }
       {
-        name: "Contacts"
+        name: "SCRUI"
         features: [
           ["Feature A1", false]
           ["Feature A2", true]
@@ -24,19 +24,21 @@ Meteor.startup ->
 
     timestamp = (new Date()).getTime()
     for project in data
+      console.log "project: #{project.name}"
       project_id = Projects.insert
         name: project.name
         timestamp: timestamp
       for info in project.features
-        Features.insert
+        Features.insert _.defaults {
           project_id: project_id
           name: info[0]
           timestamp: timestamp
           active: info[1]
-        timestamp += 1 # ensure unique timestamp.
+        }, Features.defaults()
+        timestamp += 1 # ensure unique timestamp
 
   if Groups.find().count() is 0
-    Groups.insert(name: name) for name in ['Development', 'QA']
+    Groups.insert(name: name) for name in ['SC-Development', 'SC-Product Marketing']
 
   null
 

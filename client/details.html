@@ -4,11 +4,11 @@
             <form>
                 <div class="row">
                     <div class="row-label">Feature</div>
-                    <input type="text" value="{{name}}">
+                    <input type="text" name="feature" value="{{name}}">
                 </div>
                 <div class="row">
                     <div class="row-label">Description</div>
-                    <textarea></textarea>
+                    <textarea name="description"></textarea>
                 </div>
                 <div class="row">
                     <div class="row-label">Status</div>
@@ -16,16 +16,26 @@
                 </div>
                 <div class="row">
                     <div class="row-label">Scope</div>
-                    <input type="radio" name="scope" value="all" checked> All users &nbsp; &nbsp;
-                    <input type="radio" name="scope" value="all"> Custom
+                    <input type="radio" name="scope" value="all" {{all_users_checked 'all'}}> All users &nbsp; &nbsp;
+                    <input type="radio" name="scope" value="custom" {{all_users_checked 'custom'}}> Custom
                 </div>
-                <div class="row">
-                    <div class="row-label">Groups</div>
-                    <div class="groups-container">
-                        {{> group_picker}}
+                <fieldset {{formDisabled all_users}}>
+                    <div class="row">
+                        <div class="row-label">Percentage</div>
+                        <div class="inline-block">
+                            <label>
+                                <input type="checkbox">
+                                Percentage of users
+                            </label>
+                        </div>
                     </div>
-
-                </div>
+                    <div class="row">
+                        <div class="row-label">Groups</div>
+                        <div class="groups-container">
+                            {{> group_picker}}
+                        </div>
+                    </div>
+                </fieldset>
             </form>
         {{/with}}
     {{else}}
