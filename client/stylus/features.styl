@@ -33,7 +33,7 @@ fieldset:disabled
   textarea, input
     margin-bottom 0
   input[type=text], textarea
-    width 340px
+    width 95%
   input[type=radio]
     margin-top 0
   input[type=text]
@@ -47,6 +47,9 @@ fieldset:disabled
     width 100px
     display inline-block
     vertical-align top
+  .feature-name, .description
+    display inline-block
+    cursor: pointer
   .groups-container
     display: inline-block
   .groups-box
@@ -58,11 +61,16 @@ fieldset:disabled
     .group-name
       display inline-block
       margin-top 4px
+  .button-container
+    float right
+    color #888
+    &:hover
+      color #333
 
 .features-pane
   background #eee
   .features-container
-    display none // initially collapsed
+    /*display none // initially collapsed*/
   .item-row
     height 24px
     cursor pointer

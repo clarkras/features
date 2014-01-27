@@ -1,0 +1,69 @@
+<template name="details">
+    {{#if any_feature_selected}}
+        {{#with feature}}
+                <div class="row">
+                    <div class="span2">Feature</div>
+                    <div class="span5">
+                        {{#if editing_feature}}
+                            <input type="text" name="feature"
+                                   data-js="details-feature-name-input" value="{{name}}">
+                        {{else}}
+                                <div class="feature-name" data-js="details-feature-name">{{name}}</div>
+                                <div class="button-container" data-js="edit-feature-name-icon">
+                                    <i class="ion-compose" title="Edit feature name"></i>
+                                </div>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2">Description</div>
+                    <div class="span5">
+                        {{#if editing_description}}
+                            <textarea data-js="details-description-input" name="description">{{description}}</textarea>
+                        {{else}}
+                            <div class="description" data-js="details-description">{{description}}</div>
+                            <div class="button-container" data-js="edit-description-icon">
+                                <i class="ion-compose" title="Edit description"></i>
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2">Status</div>
+                    <div class="span5">
+                        <div class="active-icon label {{active_class}}">{{active_text}}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2">Scope</div>
+                    <div class="span5">
+                        <input type="radio" name="scope" value="all" {{all_users_checked 'all'}}> All users &nbsp; &nbsp;
+                        <input type="radio" name="scope" value="custom" {{all_users_checked 'custom'}}> Custom
+                    </div>
+                </div>
+                <fieldset {{formDisabled all_users}}>
+                    <div class="row">
+                        <div class="span2">Percentage</div>
+                        <div class="span5">
+                            <div class="inline-block">
+                                <label>
+                                    <input type="checkbox">
+                                    Percentage of users
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span2">Groups</div>
+                        <div class="span5">
+                            <div class="groups-container">
+                                {{> group_picker}}
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+        {{/with}}
+    {{else}}
+        <div>No feature selected</div>
+    {{/if}}
+</template>

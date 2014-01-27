@@ -24,7 +24,6 @@ Meteor.startup ->
 
     timestamp = (new Date()).getTime()
     for project in data
-      console.log "project: #{project.name}"
       project_id = Projects.insert
         name: project.name
         timestamp: timestamp

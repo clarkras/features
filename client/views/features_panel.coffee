@@ -1,4 +1,4 @@
-Session.set 'editing_feature', null
+Session.set 'features:editing_feature', null
 Session.set 'editing_project', null
 
 # Add this to the README

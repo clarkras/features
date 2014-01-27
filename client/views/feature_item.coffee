@@ -11,15 +11,15 @@ Template.feature_item.events
     Features.remove @_id
     Session.set 'selected_feature', null
   'dblclick': ->
-    Session.set 'editing_feature', @_id
+    Session.set 'features:editing_feature', @_id
 
 Template.feature_item.events okCancelEvents('.edit-feature-input',
   ok: (text, evt) ->
-    feature_id = Session.get 'editing_feature'
+    feature_id = Session.get 'features:editing_feature'
     Features.update feature_id, $set: name: text
-    Session.set 'editing_feature', null
+    Session.set 'features:editing_feature', null
   cancel: ->
-    Session.set 'editing_feature', null
+    Session.set 'features:editing_feature', null
 )
 
 Template.feature_item.helpers
@@ -30,7 +30,7 @@ Template.feature_item.helpers
   active_text: ->
     if @active then "On" else "Off"
   editing_feature: ->
-    Session.equals('editing_feature', @_id)
+    Session.equals('features:editing_feature', @_id)
 
 Template.feature_item.rendered = ->
   # does nothing if the input field is not in the dom
