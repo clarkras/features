@@ -1,0 +1,9 @@
+<template name="new_group">
+    <div class="new-group-container">
+        {{#if creating_group }}
+            <input type="text" id="new-group" placeholder="New group" />
+        {{else}}
+            <a href="#" class="new-group-link">New group</a>
+        {{/if}}
+    </div>
+</template>
