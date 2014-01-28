@@ -44,6 +44,7 @@ Template.details.rendered = ->
     change: (evt) ->
       Features.update Session.get('selected_feature'), $set: percentage: evt.currentTarget.value
   enable_spinner @data
+  $(@findAll('[title]')).tooltip()
 
 Template.details.events okCancelEvents('[data-js=details-feature-name-input]',
   ok: (text, evt) ->

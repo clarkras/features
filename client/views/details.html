@@ -5,7 +5,7 @@
             {{#if editing_feature}}
                 <input type="text" name="feature" data-js="details-feature-name-input" value="{{name}}">
             {{else}}
-                <div class="feature-name" data-js="details-feature-name">{{name}}</div>
+                <div class="feature-name" data-js="details-feature-name" title="Click to edit">{{name}}</div>
             {{/if}}
         </div>
     </div>
@@ -16,7 +16,7 @@
                 <textarea data-js="details-description-input" name="description">{{description}}</textarea>
             {{else}}
                 {{#if description}}
-                    <div class="description" data-js="details-description">{{description}}</div>
+                    <div class="description" data-js="details-description" title="Click to edit">{{description}}</div>
                 {{else}}
                     <div class="empty-description" data-js="empty-description">Click to add a description</div>
                 {{/if}}
@@ -26,7 +26,7 @@
     <div class="row">
         <div class="span2">Status</div>
         <div class="span5">
-            <div class="active-icon label {{active_class}}">{{active_text}}</div>
+            <div class="active-icon label {{active_class}}" title="Click to toggle">{{active_text}}</div>
         </div>
     </div>
     <div class="row">
