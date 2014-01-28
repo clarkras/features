@@ -9,7 +9,7 @@ Template.details.events
     Features.update(@_id, $set: all_users: all_users)
   'click [data-js=details-feature-name]': ->
     Session.set 'details:editing_feature', @_id
-  'click [data-js=details-description], click [data-js=edit-description-icon]': ->
+  'click [data-js=details-description], click [data-js=edit-description-icon], click [data-js=empty-description]': ->
     Session.set 'details:editing_description', @_id
 
 Template.details.helpers

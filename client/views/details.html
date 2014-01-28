@@ -21,10 +21,14 @@
                         {{#if editing_description}}
                             <textarea data-js="details-description-input" name="description">{{description}}</textarea>
                         {{else}}
-                            <div class="description" data-js="details-description">{{description}}</div>
-                            <div class="button-container" data-js="edit-description-icon">
-                                <i class="ion-compose" title="Edit description"></i>
-                            </div>
+                            {{#if description}}
+                                <div class="description" data-js="details-description">{{description}}</div>
+                                <div class="button-container" data-js="edit-description-icon">
+                                    <i class="ion-compose" title="Edit description"></i>
+                                </div>
+                            {{else}}
+                                <div class="empty-description" data-js="empty-description">Click to add a description</div>
+                            {{/if}}
                         {{/if}}
                     </div>
                 </div>
@@ -45,12 +49,10 @@
                     <div class="row">
                         <div class="span2">Percentage</div>
                         <div class="span5">
-                            <div class="inline-block">
-                                <label>
-                                    <input type="checkbox">
-                                    Percentage of users
-                                </label>
-                            </div>
+                            <label>
+                                <input type="checkbox">
+                                Percentage of users
+                            </label>
                         </div>
                     </div>
                     <div class="row">

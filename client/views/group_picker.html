@@ -1,6 +1,6 @@
 <template name="group_picker">
     <label class="checkbox">
-        <input type="checkbox" {{formChecked use_groups}}>
+        <input type="checkbox" data-js="use_groups_checkbox" {{formChecked use_groups}}>
         Active for Groups
     </label>
     </div>
@@ -9,7 +9,7 @@
             {{#each groups}}
                 <div class="group-container">
                     <label class="checkbox">
-                        <input type="checkbox" {{group_checked}}>
+                        <input type="checkbox" data-js="group_checkbox" {{group_checked feature=..}}>
                         {{name}}
                     </label>
                 </div>

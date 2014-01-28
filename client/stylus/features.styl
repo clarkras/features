@@ -25,13 +25,13 @@ body
 fieldset:disabled
   background #eee
   color #888
+  .groups-box
+    border none
 
 .inline-block
   display: inline-block
 
 .details-pane
-  textarea, input
-    margin-bottom 0
   input[type=text], textarea
     width 95%
   input[type=radio]
@@ -50,8 +50,9 @@ fieldset:disabled
   .feature-name, .description
     display inline-block
     cursor: pointer
-  .groups-container
-    display: inline-block
+  .empty-description
+    font-style italic
+    color #aaa
   .groups-box
     display inline-block
     border 1px solid #ddd
