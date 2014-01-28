@@ -20,7 +20,12 @@
             </div>
         </div>
         <div class="details-pane span7">
-            {{> details}}
+            {{#if selected_feature}}
+                {{> details selected_feature}}
+            {{else}}
+                No feature selected.
+                <div>Select a feature to show details.</div>
+            {{/if}}
         </div>
     </div>
 </template>

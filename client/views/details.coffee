@@ -1,8 +1,6 @@
 okCancelEvents = @Lib.okCancelEvents
 activate_input = @Lib.activate_input
 
-feature = null
-
 Template.details.events
   'click .active-icon': ->
     Features.update @_id, $set: active: not @active
@@ -11,17 +9,14 @@ Template.details.events
     Features.update(@_id, $set: all_users: all_users)
   'click [data-js=details-feature-name]': ->
     Session.set 'details:editing_feature', @_id
-  'click [data-js=details-description], click [data-js=edit-description-icon], click [data-js=empty-description]': ->
+  'click [data-js=details-description], click [data-js=empty-description]': ->
     Session.set 'details:editing_description', @_id
   'change #percentage [data-js=checkbox]': (evt) ->
     Features.update(@_id, $set: use_percentage: evt.currentTarget.checked)
-    enable_spinner evt.currentTarget.checked
 
 Template.details.helpers
   any_feature_selected: ->
     Session.get("selected_feature")
-  feature: ->
-    feature = Features.findOne Session.get('selected_feature')
   editing_feature: ->
     Session.equals('details:editing_feature', @_id)
   editing_description: ->
@@ -48,12 +43,7 @@ Template.details.rendered = ->
     step: 5
     change: (evt) ->
       Features.update Session.get('selected_feature'), $set: percentage: evt.currentTarget.value
-  enable_spinner feature.use_percentage
-
-enable_spinner = (enable) ->
-  enable = false if feature.all_users
-  state = if enable then 'enable' else 'disable'
-  $('#percentage .percentage-spinner').spinner state
+  enable_spinner @data
 
 Template.details.events okCancelEvents('[data-js=details-feature-name-input]',
   ok: (text, evt) ->
@@ -70,3 +60,9 @@ Template.details.events okCancelEvents('[data-js=details-description-input]',
   cancel: ->
     Session.set 'details:editing_description', false
 )
+
+enable_spinner = (model) ->
+  enable = model.use_percentage and not model.all_users
+  state = if enable then 'enable' else 'disable'
+  $('#percentage .percentage-spinner').spinner state
+

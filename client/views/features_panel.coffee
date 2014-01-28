@@ -9,4 +9,6 @@ Session.set 'editing_project', null
 #   editing_feature     feature_id
 #   editing_project     feature_id
 
-
+Template.features_panel.helpers
+  selected_feature: ->
+    Features.findOne(Session.get('selected_feature'))
