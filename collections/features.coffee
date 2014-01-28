@@ -1,9 +1,3 @@
-# Features -- name: String,
-#             project_id: String,
-#             timestamp: Number
-#             active: Boolean,
-#             all_users: Boolean
-#             use_groups: Boolean
 Features = new Meteor.Collection("features")
 if Meteor.isClient
   @Features = Features
@@ -16,7 +10,10 @@ Features.defaults = ->
   timestamp: new Date().getTime()
   active: false
   all_users: true
+  use_percentage: false
+  percentage: 0
   use_groups: false
+  groups: []
 
 if Meteor.isClient
   Handlebars.registerHelper 'features', (id) ->
