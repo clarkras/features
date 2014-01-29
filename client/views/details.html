@@ -34,6 +34,8 @@
         <div class="span5">
             <input type="radio" name="scope" value="all" {{all_users_checked 'all'}}> All users &nbsp; &nbsp;
             <input type="radio" name="scope" value="custom" {{all_users_checked 'custom'}}> Custom
+            <i class="item-icon help-icon ion-help-circled" title="Custom settings help"
+               onclick="{{openHelp '#help-custom-feature-settings'}}"></i>
         </div>
     </div>
     <fieldset {{formDisabled all_users}}>

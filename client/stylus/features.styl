@@ -25,8 +25,20 @@ body
 .ui-tooltip-content
   font-size 10px
 
+.item-icon
+  font-size 20px
+  color #888
+  &:hover
+    color #222
+
+.help-icon
+  float right
+
 .nav
   margin-bottom 10px
+
+.help-dialog
+  display none
 
 .preformatted
   font-family monospace
@@ -131,11 +143,6 @@ fieldset:disabled
       float right
       margin-right 5px
       display none
-    .item-icon
-      font-size 20px
-      color #666
-      &:hover
-        color #333
     &:hover
       background darkgray
       .button-container

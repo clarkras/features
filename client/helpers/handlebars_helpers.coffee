@@ -11,4 +11,9 @@ Handlebars.registerHelper(name, helper) for name, helper of {
   valueIf: (condition, options) ->
     condition = not condition if options.hash.negate
     options.hash.value if condition
+
+  openHelp: (selector) ->
+    dialog_options = "height:400, width:300"
+    new Handlebars.SafeString "$('#{selector}').dialog({#{dialog_options}})"
+
 }
