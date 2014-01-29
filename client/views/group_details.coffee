@@ -27,6 +27,7 @@ Template.group_details.events okCancelEvents('[data-js=group-name-input]',
 )
 
 Template.group_details.events okCancelEvents('[data-js=account-ids-input]',
+  submit_on_enter: false
   ok: (text, evt) ->
     Groups.update @_id, $set: account_ids: text
     Session.set 'group_details:editing_account_ids', false

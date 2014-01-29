@@ -13,7 +13,7 @@
         <div class="span2">Account IDs</div>
         <div class="span5">
             {{#if editing_account_ids}}
-                <textarea data-js="account-ids-input" name="account-ids">{{account_ids}}</textarea>
+                <textarea class="account-ids" data-js="account-ids-input" name="account-ids">{{account_ids}}</textarea>
             {{else}}
                 {{#if account_ids}}
                     <div class="description preformatted" data-js="account-ids" title="Click to edit">{{account_ids}}</div>

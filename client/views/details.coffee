@@ -55,6 +55,7 @@ Template.details.events okCancelEvents('[data-js=details-feature-name-input]',
 )
 
 Template.details.events okCancelEvents('[data-js=details-description-input]',
+  submit_on_enter: false
   ok: (text, evt) ->
     Features.update @_id, $set: description: text
     Session.set 'details:editing_description', false
