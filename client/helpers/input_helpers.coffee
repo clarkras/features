@@ -10,7 +10,7 @@
   cancel = callbacks.cancel or ->
   events = {}
   events["keyup #{selector}, focusout #{selector}"] = (evt) ->
-    if evt.type is 'focusout' or evt.type is "keyup" and evt.which is 13
+    if evt.type is 'focusout' #or evt.type is "keyup" and evt.which is 13
       # return/enter = ok/submit if non-empty
       value = String(evt.target.value or "")
       if value

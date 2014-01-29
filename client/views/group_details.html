@@ -1,0 +1,26 @@
+<template name="group_details">
+    <div class="row">
+        <div class="span2">Group</div>
+        <div class="span5">
+            {{#if editing_group}}
+                <input type="text" name="group" data-js="group-name-input" value="{{name}}">
+            {{else}}
+                <div class="feature-name" data-js="group-name" title="Click to edit">{{name}}</div>
+            {{/if}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="span2">Account IDs</div>
+        <div class="span5">
+            {{#if editing_account_ids}}
+                <textarea data-js="account-ids-input" name="account-ids">{{account_ids}}</textarea>
+            {{else}}
+                {{#if account_ids}}
+                    <div class="description preformatted" data-js="account-ids" title="Click to edit">{{account_ids}}</div>
+                {{else}}
+                    <div class="empty-description" data-js="empty-account-ids">Click to add account IDs</div>
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+</template>

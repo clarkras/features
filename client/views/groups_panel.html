@@ -1,6 +1,24 @@
 <template name="groups_panel">
-    {{> new_group}}
-    {{# each groups}}
-        <div>{{name}}</div>
-    {{/each}}
+    <div class="row-fluid heading-row">
+        <div class="span5">
+            {{> new_group}}
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span5 features-pane">
+            <ul>
+                {{#each groups}}
+                    {{> group_item}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="details-pane span7">
+            {{#if selected_group}}
+                {{> group_details selected_group}}
+            {{else}}
+                No group selected.
+                <div>Select a group to show details.</div>
+            {{/if}}
+        </div>
+    </div
 </template>

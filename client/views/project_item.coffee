@@ -34,7 +34,10 @@ Template.project_item.rendered = ->
 Template.project_item.events okCancelEvents('.new-feature-input',
   ok: (text, evt) ->
     project_id = Session.get 'creating_feature'
-    feature_id = Features.insert(name: text, project_id: project_id, timestamp: new Date().getTime(), active: false)
+    feature_id = Features.insert _.defaults {
+      name: text
+      project_id: project_id
+    }, Features.defaults()
     evt.target.value = ""
     Session.set 'creating_feature', false
     Session.set 'selected_feature', feature_id
