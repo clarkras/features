@@ -5,11 +5,38 @@
         page updates with background data syncronization using MiniMongo on the client. As you make
         changes in the UI, the data is synchronized with the MongoDB on the server, and the server
         updates other clients that are viewing the data.
+
+        <p/> This is a UI prototype. Your changes will be saved to the MongoDB on the server, but no
+        applications are using the feature switches. Feel free to experiment!
     </div>
     <div id="help-custom-feature-settings" class="help-dialog" title="Custom Settings">
         This describes how to use the custom feature settings.
         <p/>
-        To do: add help content.
+        The Feature Switch Service determines if a feature is active by checking the status, scope, percentage, and groups
+        fields, in that order.
+        <ol>
+            <li>
+                Status: if the feature is switched off, it's off for all users.
+            </li>
+            <li>
+                Scope: if the feature is active for all users, the percentage and groups values are ignored. The feature
+                is enabled for all users, and the values of the other fields don't matter.
+                <br/>Check "Custom" to enable the percentage and groups controls.
+            </li>
+            <li>
+                Percentage: The feature is enabled for a percentage of users. For example, if the percentage is 10, then
+                10 percent of users will have the feature enabled. If the percentage is later changed to 20, the original
+                10 percent will still get the feature, plus an additional 10 percent. The pool of users that get the
+                feature is pseudo-random, based on their accont ID and the feature name. This helps ensure that the
+                10 percent see Feature X are not the same 10 percent that see Feature Y.
+            </li>
+            <li>
+                Groups: if Active for Groups is checked, and the feature was not enabled by the earlier criteria, the
+                account ID is compared with selected group account IDs. (Use the Groups tab to manage groups). A group
+                contains a list of account IDs. The feature is enabled if the users account ID is contained in a
+                selected group.
+            </li>
+        </ol>
     </div>
     <div id="help-account-ids" class="help-dialog" title="Account IDs">
         Enter one account ID per line. Comments may appear after the account ID
