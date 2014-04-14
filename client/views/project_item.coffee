@@ -15,6 +15,7 @@ Template.project_item.events
     Session.set 'creating_feature', tmpl.data._id
   'click .destroy': ->
     Projects.remove @_id
+    Meteor.call 'project_deleted', @_id
   'dblclick': ->
     Session.set 'editing_project', @_id
 
